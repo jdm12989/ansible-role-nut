@@ -1,6 +1,7 @@
 Ansible Role: NUT
 =================
 [![Build Status](https://travis-ci.org/ntd/ansible-role-nut.svg?branch=master)](https://travis-ci.org/ntd/ansible-role-nut)
+[![License](https://img.shields.io/github/license/jdm12989/ansible-role-nut)](LICENSE)
 
 Installs and configures [NUT](http://networkupstools.org/) (Nework UPS
 tools) on Debian based systems.
@@ -22,6 +23,20 @@ configurations.
     nut_user: monitor
     nut_password: Whatever...
 
+## Operation Modes
+Used to configure the operation of NUT services.
+
+    nut_mode: standalone
+
+> `none`: not configured, must be started through external commands
+>
+> `standalone`: (default) run driver, daemon, and monitor services, no network access
+>
+> `netserver`: same as standalone, but with network access
+>
+> `netclient`: only run the monitor service
+
+## UPS Configuration
 Mainly used for configuring the monitor user. A user in the NUT sense is
 *not* the typical user a UNIX administrator is used to.
 
@@ -50,7 +65,7 @@ and reporting purposes.
 of the UPS configuration block.
 
 Example Playbook
-----------------
+================
 
     - hosts: all
       roles:
@@ -60,13 +75,3 @@ Example Playbook
             driver: riello_usb
             device: /dev/ups
             description: iPlug 800
-
-License
--------
-
-MIT
-
-Author Information
-------------------
-
-This role was created in 2016 by Nicola Fontana (ntd@entidi.it).
