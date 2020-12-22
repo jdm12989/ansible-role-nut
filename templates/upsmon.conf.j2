@@ -209,7 +209,7 @@ DEADTIME {{ dead_time | default(25) }}
 # [[UPS_shutdown]] "Configuring automatic shutdowns for low battery events"
 # or refer to the online version.
 
-POWERDOWNFLAG {{ power_down_flag | default(/etc/killpower) }}
+POWERDOWNFLAG {{ power_down_flag | default("/etc/killpower") }}
 
 # --------------------------------------------------------------------------
 # NOTIFYMSG - change messages sent by upsmon when certain events occur
