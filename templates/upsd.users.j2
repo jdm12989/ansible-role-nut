@@ -86,7 +86,7 @@
 {% endfor %}
 
 {% for device in devices %}
-{% if device.host == localhost %}
+{% if device.host == 'localhost' %}
 [{{ device.username }}]
     password = {{ device.password }}
     upsmon = {{ device.role }}
