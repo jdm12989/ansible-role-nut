@@ -149,7 +149,7 @@ retrydelay = {{ retry_delay }}
 maxstartdelay = {{ max_start_delay }}
 {% endif %}
 
-{% for ups in nut_ups %}
+{% for ups in devices %}
 [{{ ups.name }}]
     desc   = "{{ ups.description }}"
     driver = {{ ups.driver }}

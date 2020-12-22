@@ -88,7 +88,7 @@ RUN_AS_USER {{ run_as }}
 # MONITOR myups@localhost 1 upsmon pass master	(or slave)
 
 {% for ups in devices %}
-MONITOR {{ ups.name }}@{{ ups.host }}{{% :{{ ups.port }} if ups.port is defined %} 1 {{ ups.username }} {{ ups.password }} ups.role
+MONITOR {{ ups.name }}@{{ ups.host }}{{% :{{ ups.port }} if ups.port is defined %}} 1 {{ ups.username }} {{ ups.password }} ups.role
 {% endfor %}
 
 # --------------------------------------------------------------------------

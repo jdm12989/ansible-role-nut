@@ -79,7 +79,7 @@
     {% if user.actions is defined %}
     actions = {{ user.actions }}
     {% endif %}
-    { for cmd in user.commands %}
+    {% for cmd in user.commands %}
     instcmds = {{ cmd }}
     {% endfor %}
     
