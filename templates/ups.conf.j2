@@ -154,18 +154,18 @@ maxstartdelay = {{ max_start_delay }}
     desc   = "{{ ups.description }}"
     driver = {{ ups.driver }}
     port   = {{ ups.dev }}
-    {% if ups.sdorder is defined %}
+{% if ups.sdorder is defined %}
     sdorder = {{ ups.sdorder }}
-    {% endif %}
-    {% if ups.nolock is defined %}
+{% endif %}
+{% if ups.nolock is defined %}
     nolock = {{ ups.nolock }}
-    {% endif %}
-    {% if ups.maxstartdelay is defined %}
+{% endif %}
+{% if ups.maxstartdelay is defined %}
     maxstartdelay = {{ ups.max_start_delay }}
-    {% endif %}
-    {% if ups.synchronous is defined %}
+{% endif %}
+{% if ups.synchronous is defined %}
     synchronous = {{ ups.synchronous }}
-    {% endif %}
+{% endif %}
     {{ ups.extra | default('') | indent(4) }}
     
 {% endfor %}

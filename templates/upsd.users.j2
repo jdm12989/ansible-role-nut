@@ -76,12 +76,12 @@
 {% for user in users %}
 [{{ user.username }}]
     password = {{ user.password }}
-    {% if user.actions is defined %}
+{% if user.actions is defined %}
     actions = {{ user.actions }}
-    {% endif %}
-    {% for cmd in user.commands %}
+{% endif %}
+{% for cmd in user.commands %}
     instcmds = {{ cmd }}
-    {% endfor %}
+{% endfor %}
     
 {% endfor %}
 
